@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		(Check the console)
+		<script src="hc256.js"></script>
+		<script>
+			var hc256 = new hc256_context();
+			
+			hc256.initialize_from_text("test1234", "salt5678");
+			var test = hc256.encrypt_string("The encryption/decryption is working, with emojis too! 😊");
+			
+			hc256.initialize_from_text("test1234", "salt5678");
+			console.log(hc256.decrypt_string(test));
+		</script>
+	</body>
+</html>
